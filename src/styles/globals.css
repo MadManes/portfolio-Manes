@@ -264,7 +264,6 @@ main {
   text-align: center;
   overflow-y: auto;
   display: flex;
-  flex-direction: column;
 }
 
 .summary-center {
