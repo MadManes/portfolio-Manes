@@ -1,6 +1,7 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import HomeLayout from "../components/layout/HomeLayout";
 import Summary from "../components/summary/Summary";
+import Footer from "../components/footer/Footer";
 
 function Home() {
   const [lang, setLang] = useState<"ES" | "EN">("ES");
@@ -16,10 +17,10 @@ function Home() {
           onSectionChange={setActiveSection}
         />
 
-        <Summary section={activeSection} />
-      </main>
-
-      <footer className="footer">Footer</footer>
+        <Summary section={activeSection}>
+          <Footer />
+        </Summary>
+      </main>      
     </div>
   );
 }
