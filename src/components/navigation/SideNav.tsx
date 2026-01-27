@@ -1,16 +1,20 @@
-const items = [
-  { id: "projects", label: "Proyectos" },
-  { id: "skills", label: "Habilidades" },
-  { id: "education", label: "Formación" },
-];
+import { translations } from "../../constants/translations";
 
-export default function SideNav({
-  active,
-  onChange,
-}: {
+type Props = {
   active: string;
   onChange: (id: string) => void;
-}) {
+  lang: "ES" | "EN"; 
+};
+
+export default function SideNav({ active, onChange, lang }: Props) {
+  const t = translations[lang].nav;
+
+  const items = [
+    { id: "home", label: t.home },
+    { id: "projects", label: t.projects },
+    { id: "skills", label: t.skills },
+    { id: "education", label: t.education },
+  ];
   return (
     <nav className="side-nav">
       <ul className="side-nav-list">

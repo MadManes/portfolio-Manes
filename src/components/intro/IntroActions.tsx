@@ -1,8 +1,12 @@
-export default function IntroActions() {
+type Props = {
+  onOpenModal: (type: string) => void;
+};
+
+export default function IntroActions({ onOpenModal }: Props) {
   return (
     <nav className="intro-actions">
-      <a href="#perfil">Perfil</a>
-      <a href="#contacto">Contacto</a>
+      <a onClick={() => onOpenModal("profile")} style={{cursor: 'pointer'}}>Perfil</a>
+      <a onClick={() => onOpenModal("contact")} style={{cursor: 'pointer'}}>Contacto</a>
     </nav>
   );
 }

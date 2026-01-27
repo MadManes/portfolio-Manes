@@ -17,8 +17,8 @@ export default function ProjectCard({ project }: {project: Project}) {
                 <div className="project-meta">
                     <h3 className="project-title">{project.title}</h3>
                     <div className="project-actions">
-                        <a href={project.demo} target="_blank">Ver proyecto</a>
-                        <a href={project.details}>Detalles</a>
+                        <a href={project.demo} target="_blank">{project.demo}</a>
+                        <a href={project.details}>{project.details}</a>
                     </div>
                 </div>
             </div>
