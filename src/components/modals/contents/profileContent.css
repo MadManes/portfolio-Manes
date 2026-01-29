@@ -1,0 +1,12 @@
+.profile-content {
+    text-align: justify;
+    white-space: pre-wrap;
+}
+.profile-content h2 {
+    padding-bottom: 12px;
+    font-size: 1.2rem;
+}
+
+.profile-content p {
+    font-size: 0.95rem;
+}

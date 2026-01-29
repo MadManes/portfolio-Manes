@@ -1,0 +1,68 @@
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+
+.contact-form h2 {
+    font-size: 1.96rem;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+}
+
+.input_form {    
+    background-color: var(--bg-card);
+    border: none;
+    border-bottom: 2px solid var(--text-button-accent);;
+    outline: none;
+    color: var(--text-main);
+    width: 100%;
+    max-width: 300px;
+
+    height: 44px;
+    padding: 4px;
+    padding-top: 12px;;
+    margin-bottom: 14px;
+    line-height: 1.2rem;
+
+    font-size: 1.05rem;
+    text-size-adjust: initial;    
+}
+
+/*.input_form::placeholder {
+    transition: opacity 0.15s ease;
+}
+
+.input.form:focus::placeholder {
+    opacity: 0;
+}*/
+
+.input_form::placeholder {
+  opacity: 1;
+}
+
+.input_form:focus::placeholder {
+  opacity: 0;
+}
+
+textarea.input_form {
+    height: 120px;
+    padding: 10px;
+    resize: none;    
+}
+
+.input_form .action.is-active {
+    /* Hacer lo del placeholder chau */
+}
+
+.button {
+    margin-top: 10px;
+    color: var(--text-main);
+    background-color: var(--text-button-accent);
+    border: none;
+    width: 100%;
+    max-width: 300px;
+    height: 36px;
+}
+
+

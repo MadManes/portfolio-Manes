@@ -24,11 +24,11 @@ function Home() {
           onSectionChange={setActiveSection}
           setActiveModal={setActiveModal}
         />
-        <Modal isOpen={activeModal === "profile"} onClose={() => setActiveModal(null)} size="large">
-          <ProfileContent />
+        <Modal isOpen={activeModal === "profile"} onClose={() => setActiveModal(null)} size="medium">
+          <ProfileContent lang={lang}/>
         </Modal>
-        <Modal isOpen={activeModal === "contact"} onClose={() => setActiveModal(null)} size="large">
-          <ContactForm />
+        <Modal isOpen={activeModal === "contact"} onClose={() => setActiveModal(null)} size="small">
+          <ContactForm lang={lang}/>
         </Modal>
         <Summary section={activeSection} lang={lang}>
           <Footer />

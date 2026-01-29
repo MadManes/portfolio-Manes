@@ -28,7 +28,7 @@ body {
   --bg-main: #0f1115;
   --bg-card: #151922;
   --bg-accent: #1f2633;
-  --bg-footer: rgba(215,225,255,0.5);
+  --bg-footer: rgba(25,85,185,0.5);
   --text-main: #e6e6e6;
   --text-button: #1052db;
   --text-button-accent: #2272ff;
@@ -46,13 +46,13 @@ body {
   --bg-accent: #2d2d2d;
   --bg-footer: rgba(215,225,255,0.5);
   --text-main: #ffffff;
-  --text-button: #1052db;
-  --text-button-accent: #2272ff;
+  --text-button: #a00f0f;
+  --text-button-accent: #b10202;
   --text-muted: #9aa0aa;    
   --border-subtle: rgba(255, 225, 255, 0.08);
-  --accent: #ff4e4e;
-  --card-glow: rgba(120, 180, 255, 0.45);
-  --card-glow-soft: rgba(120, 180, 255, 0.25);
+  --accent: #ff0404;
+  --card-glow: rgba(56, 143, 109, 0.45);
+  --card-glow-soft: rgba(37, 247, 149, 0.25);
 }
 
 .page {
@@ -110,19 +110,28 @@ main {
   margin-top: -6px;
   width: clamp(110px, 12vw, 130px);
   height: clamp(110px, 12vw, 130px);
-  border-radius: 50%;
-  overflow: hidden;
+  border-radius: 50%;  
+  overflow: hidden;  
+}
+
+.intro-photo:hover {
+  box-shadow: 
+    inset 0 1px 2px rgba(255, 255, 255, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.5),
+    0 0 14px var(--card-glow-soft),
+    0 3px 10px var(--card-glow);
 }
 
 .intro-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  cursor: pointer;  
 }
 
 .intro-actions {
   padding-top: 4px;  
-  width: clamp(120px, 12vw, 130px);
+  width: clamp(130px, 12vw, 140px);
   margin: 8px auto 5px;
   display: flex;
   justify-content: space-between;
@@ -165,6 +174,7 @@ main {
   display: flex;
   align-items: center;
   gap: 20px;
+  padding-top: 4px;
 }
 
 .header-right button {
@@ -187,7 +197,7 @@ main {
   color: var(--text-muted);
   border: 1px solid var(--border-subtle);
   border-radius: 4px;
-  padding: 2px 8px;
+  padding: 2px 8px;  
   font-size: 0.8rem;
   cursor: pointer;
   outline: none;
@@ -210,8 +220,8 @@ main {
   font-weight: 500;
   color: var(--text-muted);
 }
-.side-nav {
-  margin-top: 0;  
+.side-nav {  
+  padding-bottom: 6px;  
 }
 
 .side-nav-list {
@@ -264,7 +274,7 @@ main {
 
 .side-nav-list .action.is-active {
   color: var(--accent);
-  border-color: var(--text-button-accent);
+  border-color: var(--text-main);
   box-shadow: 
     inset 0 1px 2px rgba(255, 255, 255, 0.06),
     0 0 0 1px rgba(255, 255, 255, 0.15),
@@ -326,21 +336,6 @@ main {
   max-width: 720px;
 }
 
-.footer {  
-  min-height: 48px;
-  background: var(--bg-footer);
-  opacity: 0.3;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  font-size: 0.85rem;
-
-  padding: 0 16px;
-}
-
 .hamburguer {
   display: none;
   background: none;
@@ -351,7 +346,7 @@ main {
 }    
   
 
-@media (max-width: 660px) {
+@media (max-width: 980px) {
   .home-layout {
     display: flex;
     flex-direction: column;      
@@ -402,5 +397,77 @@ main {
     display: none;
   }
   
+}
+
+.mobile-nav-overlay {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 70px);
+  background-color: var(--bg-main);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  animation: fadeIn 0.3s ease;
+}
+
+.mobile-nav ul {
+  list-style: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.mobile-nav li {
+  font-size: 1.8rem;
+  color: var(--text-main);
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.mobile-nav li:hover {
+  color: var(--accent);
+}
+
+.mobile-lang-switcher {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  font-size: 1.2rem;
+}
+
+.mobile-lang-switcher button {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.mobile-lang-switcher button.active {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Ajuste al botón hamburguesa cuando está abierto */
+.hamburguer.open {
+  color: var(--accent);
+}
+
+@media (max-width: 980px) {
+  /* Aseguramos que el header no tape el menú */
+  .header {
+    z-index: 1000;
+  }
 }
 
