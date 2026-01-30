@@ -42,7 +42,7 @@ export default function Header({ lang, onLangChange, theme, onThemeChange, isMen
           onClick={toggleMenu}
           aria-label="Menú"
         >
-          {isMenuOpen ? "X" : "☰"}
+          ☰
         </button>
       </div>
     </header>

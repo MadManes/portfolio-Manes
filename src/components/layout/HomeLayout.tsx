@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Intro from "../intro/Intro";
 import Header from "../header/Header";
 import IntroInfo from "../intro/IntroInfo";
@@ -24,6 +24,23 @@ export default function HomeLayout({
   setActiveModal,
 }: Props) {
   const [isMenuOpen, setIsMenuOpen ] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (isMenuOpen && menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    // Escuchar evento de click todo el documento
+    document.addEventListener("mousedown", handleClickOutside);
+
+    // Limpiar el evento al desmontar el componente
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMenuOpen]);
 
   const handleNavigation = (section: string) => {
     onSectionChange(section);
@@ -55,7 +72,7 @@ export default function HomeLayout({
 
           {/* Menu desplegable */}
           {isMenuOpen && (
-            <div className="mobile-nav-overlay">
+            <div className="mobile-nav-overlay" ref={menuRef}>
               <nav className="mobile-nav">
                 <ul>
                   <li onClick={() => handleNavigation("home")}>
@@ -67,7 +84,7 @@ export default function HomeLayout({
                   <li onClick={() => handleNavigation("skills")}>
                     {lang === "ES" ? "Habilidades" : "Skills"}
                   </li>
-                  <li onClick={() => handleNavigation("formation")}>
+                  <li onClick={() => handleNavigation("education")}>
                     {lang === "ES" ? "Estudios" : "Education"}
                   </li>
                 </ul>
