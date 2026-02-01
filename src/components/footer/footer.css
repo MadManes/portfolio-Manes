@@ -1,12 +1,47 @@
 .footer {  
-  min-height: 48px;  
-  background: linear-gradient(to bottom, transparent, var(--bg-footer));
+  min-height: 58px;  
   color: var(--text-main);
+  background: linear-gradient(to bottom, transparent, var(--bg-footer));
+  border-bottom: rgba(255, 255, 255, 0.42) solid 1.5px;
   opacity: 0.5;
   font-size: 0.85rem;
-
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 0 16px;
+  justify-content: center;  
 }
+
+.footer-container {
+  width: 100%;
+  max-width:  1200px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social-link {  
+  align-items: center;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.social-link img {
+  width: 28px; 
+  height: 28px;  
+  
+}
+
+.social-link:hover {
+  transform: translateY(-0.2px);
+  filter: brightness(1) invert(0.7) drop-shadow(0 0 1px var(--accent));
+}
+
+
+/* No me convence... 
+@media (max-width: 980px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+  }
+}
+...*/

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "./modal.css";
 
 interface ModalProps {
@@ -8,10 +9,21 @@ interface ModalProps {
 }
 
 export default function Modal({ isOpen, onClose, size="large", children }: ModalProps) {
-    if (!isOpen) return null;
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden'; // Bloque scroll
+        }
+        
+        // Cuando se cierra
+        return () => {
+            document.body.style.overflow = 'unset'; // Libera scroll
+        };
+    }, [!isOpen]);
+
+    if (!isOpen) return null;    
 
     return (
-        <div className="modal-overlay" onClick={onClose}>
+        <div className="modal-overlay">
             <div
                 className={`modal-content ${size}`}
                 onClick={(e) => e.stopPropagation()}

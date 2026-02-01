@@ -7,14 +7,18 @@
 }
 
 html, body {
-  height: 100%;
+  height: 100%;  
 }
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;  
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 :root {    
@@ -28,7 +32,7 @@ body {
   --bg-main: #0f1115;
   --bg-card: #151922;
   --bg-accent: #1f2633;
-  --bg-footer: rgba(25,85,185,0.5);
+  --bg-footer: rgba(24,80,245,0.35);
   --text-main: #e6e6e6;
   --text-button: #1052db;
   --text-button-accent: #2272ff;
@@ -361,6 +365,10 @@ main {
     color: var(--text-button);
   }
 
+  .hamburguer:hover {
+    color: var(--accent);
+  }
+
   .side-nav {
     display: none;
   }
@@ -428,7 +436,7 @@ main {
   
   justify-content: center;
   padding-top: 40px;
-  animation: fadeIn 0.4s ease;
+  
 }
 
 .mobile-nav ul {  
@@ -491,13 +499,9 @@ main {
   color: var(--accent);
   background-color: var(--bg-card);
   border: var(--bg-accent) solid 1px;
-  border-bottom: var(--bg-card);
-  animation: fadeIn 0.4s ease;
+  border-bottom: var(--bg-card);  
   z-index: 1100;  
 }
 
-@media (max-width: 980px) {
-  /* Aseguramos que el header no tape el menú */
-  
-}
+
 
