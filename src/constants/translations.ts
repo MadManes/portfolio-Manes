@@ -21,32 +21,36 @@ export const translations = {
     projects: [      
         {
             id: 1,
+            id_str: "project1",
             title: "Drum WAV Creator",
-            description: "Aplicación de escritorio para crear beats de batería con sistema de grilla. Crea beats personalizados con múltiples compases, subdivisiones, además de guardar/cargar proyecto, reproducir en vivo y descargar archivo WAV.",
+            description: "App de escritorio para crear líneas de batería mediante un sistema de grillas y trabajar sin límites con compases de cualquier métrica. Además permite cargar/guardar proyecto, reproducir/editar en tiempo real, y descargar la pista completa en formato WAV.",
             image: "/project2_preview.png",
             demo: "Descarga PC",
             details: "Más detalles",
         },
         {
             id: 2,
+            id_str: "project2",
             title: "Relevo Online",
-            description: "Web App que transmite online, relevos del personal de una empresa. Compartiendo en tiempo real los relevos que los empleados ven, originalmente, por pantallas en la sala de descanso.",
+            description: "Web App desarrollada para la transmisión en tiempo real de los relevos del personal de una empresa, facilitando el acceso a esta información desde cualquier sector que originalmente solo está disponible en monitores internos.",
             image: "/project1_preview.png",
             demo: "Visitar página",
             details: "Más detalles",
         },
         {
             id: 3,
-            title: "Proyecto 3",
-            description: "Descripción breve del proyecto 3",
+            id_str: "project3",
+            title: "Juego Online",
+            description: "Web App con registro e inicio de sesión de usuarios para jugar online mano a mano con otro jugador conectado. La página cuenta con sistema de chat, estado de usuarios y un canvas donde se crea y reproduce la partida.",
             image: "/project3.png",
             demo: "Visitar página",
             details: "Más detalles",
         },
         {
             id: 4,
-            title: "Proyecto 4",
-            description: "Descripción breve del proyecto 4",
+            id_str: "project4",
+            title: "Simulador de Casino",
+            description: "App de escritorio con simuladores de juegos de casino, que permite ver partidas simuladas en tiempo real, o ejecutar una gran cantidad de manos en segundo plano para generar resultados y estadísticas.",
             image: "/project4.png",
             demo: "Descarga PC",
             details: "Más detalles",
@@ -80,6 +84,7 @@ export const translations = {
     projects: [
         {
             id: 1,
+            id_str: "project1",
             title: "Drum WAV Creator",
             description: "A short description of project 1",
             image: "/project2_preview.png",
@@ -88,6 +93,7 @@ export const translations = {
         },
         {
             id: 2,
+            id_str: "project2",
             title: "Project 2",
             description: "A short description of project 2",
             image: "/project1_preview.png",
@@ -96,6 +102,7 @@ export const translations = {
         },
         {
             id: 3,
+            id_str: "project3",
             title: "Project 3",
             description: "A short description of project 3",
             image: "/project3.png",
@@ -104,6 +111,7 @@ export const translations = {
         },
         {
             id: 4,
+            id_str: "project4",
             title: "Project 4",
             description: "A short description of project 4",
             image: "/project4.png",

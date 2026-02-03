@@ -59,6 +59,21 @@ body::-webkit-scrollbar {
   --card-glow-soft: rgba(37, 247, 149, 0.25);
 }
 
+[data-theme=light1] {
+  --bg-main: #cdcdcd;
+  --bg-card: #afafaf;
+  --bg-accent: #bdbfbd;
+  --bg-footer: rgba(37, 247, 149, 0.25);
+  --text-main: #0b0b0b;
+  --text-button: #075410;
+  --text-button-accent: #13be00;
+  --text-muted: #4a404a;    
+  --border-subtle: rgba(255, 225, 255, 0.08);
+  --accent: #078830;
+  --card-glow: rgba(255, 193, 22, 0.45);
+  --card-glow-soft: rgba(211, 107, 10, 0.25);
+}
+
 .page {
   min-height: 100vh;
   display: flex;

@@ -3,10 +3,14 @@ import ProjectCard from "./ProjectCard";
 import { translations } from "../../constants/translations";
 import "./projects.css"
 
+type Props = {
+  lang: "ES" | "EN";
+  onOpenModal: (type: string) => void;
+};
 
-export default function ProjectsSection({ lang }: {lang: "ES" | "EN" }) {
+export default function ProjectsSection({ lang, onOpenModal }: Props) {
     const t = translations[lang].projects;
-    const total =t.length;
+    const total = t.length;
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 980);
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -48,7 +52,7 @@ export default function ProjectsSection({ lang }: {lang: "ES" | "EN" }) {
 
             <div className="projects-grid">
                 {projectsToShow.map((p) => (
-                    <ProjectCard key={p.id} project={p} />
+                    <ProjectCard key={p.id} project={p} onOpenModal={onOpenModal}/>
                 ))}
             </div>
 

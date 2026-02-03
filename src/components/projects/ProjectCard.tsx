@@ -1,4 +1,5 @@
 type Project = {
+    id_str: string;
     title: string;
     description: string;
     image: string;
@@ -6,7 +7,12 @@ type Project = {
     details: string;
 };
 
-export default function ProjectCard({ project }: {project: Project}) {
+type Props = {
+    project: Project;
+    onOpenModal: (type: string) => void;
+}
+
+export default function ProjectCard({ project, onOpenModal }: Props) {
     return (
         <article className="project-card">
             <img src={project.image} alt={project.title} className="project-floating-image" />
@@ -14,8 +20,16 @@ export default function ProjectCard({ project }: {project: Project}) {
                 <div className="project-header-row">
                     <h3>{project.title}</h3>
                     <div className="project-links">
-                        <a href={project.demo} target="_blank">{project.demo}</a>
-                        <a href={project.details}>{project.details}</a>
+                        <a href={project.demo} target="_blank" rel="noopener noreferrer">{project.demo}</a>
+                        <a 
+                            href="#"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                onOpenModal(project.id_str);
+                            }}
+                        >
+                            {project.details}
+                        </a>
                     </div>
                 </div>
                 <p className="project-description">

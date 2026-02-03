@@ -19,6 +19,7 @@ export default function Header({ lang, onLangChange, theme, onThemeChange, isMen
           >            
             <option value="dark1">Blue Moon</option>
             <option value="dark2">Nightwolf</option>
+            <option value="light1">Natural Mystic</option>
           </select>
         </div>
         <div className="header-lang">
